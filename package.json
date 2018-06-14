@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode=development",
-    "build:min": "webpack --output-filename jsObjectFunctions.min.js -p"
+    "build:min": "webpack --output-filename jsObjectFunctions.min.js -p",
+    "lint": "eslint --fix ./src"
   },
   "author": "",
   "license": "ISC",
