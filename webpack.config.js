@@ -7,7 +7,7 @@ module.exports = {
   output: {
     filename: 'jsObjectFunctions',
     library: 'jsObjectFunctions',
-    libraryTarget: umd,
+    libraryTarget: 'umd',
     path: path.join(__dirname, '/dist'),
   },
   resolve: {
