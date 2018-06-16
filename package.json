@@ -2,10 +2,10 @@
   "name": "jsobjectfunctions",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "build": "webpack --mode=development",
-    "build:min": "webpack --output-filename jsObjectFunctions.min.js -p",
+    "build:min": "webpack --output-filename jsObjectFunctions.min.js --mode=production",
     "lint": "eslint --fix ./src",
     "prettify": "prettier --write ./src/**/*.js",
     "test": "jest"
