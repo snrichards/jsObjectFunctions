@@ -1,6 +1,5 @@
 const plugins = [
   '@babel/plugin-proposal-optional-chaining',
-  '@babel/plugin-syntax-object-rest-spread',
 ];
 
 if (process.env.NODE_ENV === 'test') {
