@@ -1,15 +1,13 @@
 import { reduce } from '../index';
+import { getInitialValue } from '../utils';
 
-export const map = (obj, cb) => {
-  let initialValue = {};
+export const map = (obj, cb) =>
+  reduce(
+    obj,
+    (acc, val, key) => {
+      acc[key] = cb(val);
 
-  if (obj?.constructor !== Object && typeof obj?.constructor === 'function') {
-    initialValue = new obj.constructor();
-  }
-
-  return reduce(obj, (acc, val, key) => {
-    acc[key] = cb(val);
-
-    return acc;
-  }, initialValue);
-};
+      return acc;
+    },
+    getInitialValue(obj),
+  );

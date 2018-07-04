@@ -1,16 +1,20 @@
 import { reduce } from '../index';
+import { getInitialValue } from '../utils';
 
-const filter = (obj, predicate, filterIn = true) => (
-  reduce(obj, (acc, val, key) => {
-    const result = predicate(val);
+const filter = (obj, predicate, filterIn = true) =>
+  reduce(
+    obj,
+    (acc, val, key) => {
+      const result = predicate(val);
 
-    if (filterIn ? result : !result) {
-      acc[key] = val;
-    }
+      if (filterIn ? result : !result) {
+        acc[key] = val;
+      }
 
-    return acc;
-  })
-);
+      return acc;
+    },
+    getInitialValue(obj),
+  );
 
 export const filterIn = (obj, predicate) => filter(obj, predicate);
 
